@@ -1,0 +1,103 @@
+---
+title: "c14bazAAR & oxcAAR"
+subtitle: Two R packages for the collection, calibration and modelling of 14C dates
+author: "Clemens Schmid, Martin Hinz"
+date: "March 2018"
+institute: Institute of Pre- and Protohistoric Archaeology, Kiel University
+fontsize: 9pt
+output:
+  beamer_presentation:
+    theme: "metropolis"
+fig_caption: yes
+header-includes:
+  - \titlegraphic{\begin{flushright}\includegraphics[width=.3\textwidth]{../images/logos/isaak_with_text.png}\end{flushright}\hfill}
+  - \metroset{sectionpage=progressbar}
+---
+
+```{r, echo = FALSE}
+# https://stackoverflow.com/questions/25646333/code-chunk-font-size-in-rmarkdown-with-knitr-and-latex
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+```
+
+# Radiocarbon data
+
+## The backbone of absolute chronology
+
+## The law of large numbers
+
+## A thousand databases
+
+**14SEA**: 14C database for Southeast Europe and Anatolia (10,000–3000 calBC) \
+**aDRAC**: Archives des datations radiocarbone d'Afrique centrale \
+**AustArch**: Database of 14C and Luminescence Ages from Archaeological Sites in Australia. \
+**Banadora**: Banque nationale de données radiocarbone. \
+**CalPal**: Radiocarbon Database of the CalPal software package. \
+**CARD**: Canadian Archaeological Radiocarbon Database. \
+**CONTEXT**: Collection of radiocarbon dates from sites in the Near East and neighboring regions (20.000 - 5.000 calBC). \
+**Euroevol**: Cultural Evolution of Neolithic Europe Dataset. \
+**INQUA**: Radiocarbon Palaeolithic Europe Database. \
+**Ibercrono**: Cronometrías Para la Historia de la Península Ibérica. \
+**KITE East Africa**: Radiocarbon dates from eastern Africa in the CARD2.0 format. \
+**PPND**: The platform for neolithic radiocarbon dates. \
+**RADON**: Central European and Scandinavian database of \textsuperscript{14}C dates for the Neolithic and Early Bronze Age. \ \
+**...**
+
+# c14bazAAR
+
+## Idea
+ c14bazAAR is a R package to **download**, **merge** and **prepare** \textsuperscript{14}C dates from **different source databases**
+ 
+```{r eval = FALSE}
+# basic workflow
+get_dates() %>%           # get dates
+  ...() %>%               
+  calibrate() %>%         # apply some data preparation tools
+  ...() %>%
+  ...() -> list_of_dates  # get a nice date list for your research
+```
+
+- User perspective
+    - access many highly different databases with one interface
+    - reproducibility with scripted data selection
+    - standard data structures for direct access to powerful R tools (tidyverse)
+- Developer perspective
+    - Open Source: examine & improve the implementation and adjust everything for your needs
+    - simple parser development framework to add further databases
+    - embed bulk c14 dates into your own application
+    
+c14bazAAR is the backend of a \textsuperscript{14}C dates search engine: \textbf{\url{www.neolithicRC.de}}
+
+## Common data structure: The c14_date_list S3 class
+
+```{r size = "small"}
+c14bazAAR::get_aDRAC()
+```
+
+## Features
+
+## Demotime
+
+# oxcAAR
+
+## Idea
+
+## Features 
+
+## Whatnot
+
+## Demotime
+
+## Projekt Timeline
+
+![](../images/smartart_history.png)
+
+**Clemens Schmid**                   
+clemens@nevrome.de  
+
+**Martin Hinz**              
+martin.hinz@ufg.uni-kiel.de
+
