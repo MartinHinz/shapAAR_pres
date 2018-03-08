@@ -1,6 +1,6 @@
 ---
-title: "Classifying vessel shapes using automated shape extraction and unsupervised classification"
-subtitle: Extraction, analysis and classification of (not only) archaeological objects from scanned images
+title: "Classifying vessel shapes"
+subtitle: using automated shape extraction and unsupervised classification
 author: "Martin Hinz^1^, Caroline Heitz^2^"
 date: "March 2018"
 institute: 1. Institute of Pre- and Protohistoric Archaeology, Kiel University; 2. Institut für Archäologische Wissenschaften, Bern University
