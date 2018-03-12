@@ -1,21 +1,34 @@
-\frametitle{\protect \hypertarget {active-contour-with-beakers}{Active contour with Beakers}}
+\frametitle{\protect \hypertarget {approachworkflow-1}{approach/workflow}}
 
-See
-\href{https://github.com/ISAAKiel/shapAAR/blob/master/vignettes/object-extraction.md}{shapAAR
-vignette}
+\begin{itemize}
+\tightlist
+\item
+  using profile distances + additional nominal variables as input
+\item
+  conduct t-sne
+\item
+  using hdbscan to cluster
+\item
+  package \texttt{Rtsne}: conduct t-sne
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\endhead
-\includegraphics[width=\textwidth,height=0.1\textwidth]{../images/shapaar_extraction/image_stopping_fun-1.png}
-& Image preparation\tabularnewline
-\includegraphics[width=\textwidth,height=0.1\textwidth]{../images/shapaar_extraction/active_contor_result_compare-1.png}
-& Image segmentation\tabularnewline
-\bottomrule
-\end{longtable}
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{Rtsne(as.matrix(shapes),perplexity=30,dims=2,theta\ =\ 0)}
+  \end{itemize}
+\item
+  package \texttt{dbscan}: conduct hdbscan on t-sne result
 
-\begin{verbatim}
-"![](red.png)","![](green.png)"
-"![](blue.png)","![](black.png)"
-\end{verbatim}
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{hdbscan(this\_res\_sne,\ minPts\ =\ 5)}
+  \end{itemize}
+\item
+  for individual clusters, repeat with cluster members as new dataset
+  (usually only 2 levels)
+\end{itemize}
+
+\includegraphics[width=\textwidth,height=0.25\textwidth]{../images/tsne_hdbscan_level0.png}
+\includegraphics[width=\textwidth,height=0.25\textwidth]{../images/tsne_hdbscan_level1.png}
 

@@ -8,8 +8,9 @@ fontsize: 9pt
 output:
   beamer_presentation:
     theme: "metropolis"
-    slide_level: 3
+    slide_level: 2
     fig_caption: yes
+    toc: true
 header-includes:
   - \titlegraphic{\begin{flushright}\includegraphics[width=.3\textwidth]{../images/logos/isaak_with_text.png}\end{flushright}\hfill}
   - \metroset{sectionpage=progressbar}
@@ -32,14 +33,63 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 })
 ```
 
-# Motivation
+# motivation
 
-## Vessel shape and typology
+## shape vs. decoration for typology
 
-## Available Approaches
+## levels of pottery design
+
+```{r table_shape_vs_decoration, echo=FALSE}
+tabl <- c(
+  "functional dependency", "strong","weak",
+  "dependency on local ressources", "stronger","weak",
+  "moment of determination", "from the beginning","finished product",
+  "ad hoc changes", "difficult","easy",
+  "more reflecting", "habitus", "personal signature",
+  "design decision", "more collective", "more individual",
+  "homogenity", "more convergent", "more divergent",
+  "degrees of freedom", "lesser", "more",
+  "category of style", "more isochrestic", "more emblemic",
+  "unit of analysis", "ideal type", "singularity"
+)
+
+tabl <- matrix(tabl,ncol=3, byrow = T)
+colnames(tabl) <- c("criteria", "shape", "decoration")
+knitr::kable(tabl)
+```
+
+## Phases of ceramic production
+
+### Design
+* imagined and intended
+* concept of a shape
+* ideal type
+* **social bounded options for creativity**
+
+### 'style of action'
+* learned, habitual movements, manipulations, routines
+* at all stages of the *chaîne opératoire*
+* instantiation
+* **limited options for creativity**
+
+### 'material style'
+* physical traces and effects in the material
+* Characteristics of the vessel
+* finished object
+* **material induced alterations of the original design possible**
+
+## resume
+
+### using vessel shapes to identify underlying large scaled 'communities of practice'
+* more related to covert communication structures, habitus and similar (economic) practises
+* 'better measurable' from a practical quantitative perspective
+
+# previous approaches
 Without claim to completeness:
 
-### Using specific locations
+## quantitative approaches towards shape-based typology
+
+### using specific locations
 
 * Koch 1998
 
@@ -60,8 +110,7 @@ Without claim to completeness:
 
 ![](../images/shape_simplification_after.png){ height=30% }
 
-## Adaptive Contour
-### Problem
+## Adaptive Contour Motivation
 
 \begincols
 \begincol{.48\textwidth}
@@ -78,7 +127,7 @@ knitr::include_graphics('../images/harrison_1977_1727.png')
 \endcols
 
 
-### Solution: Active contour
+## Adaptive Contour: what is it
 
 \begincols
 \begincol{.48\textwidth}
@@ -97,13 +146,13 @@ knitr::include_graphics('../images/harrison_1977_1727.png')
 \endcol
 \endcols
 
-### Active contour with Beakers
+## Active contour with Bell Beakers
 
 See shapAAR vignette
 
 \scriptsize{https://github.com/ISAAKiel/shapAAR/blob/master/vignettes/object-extraction.md}
 
-```{r table2, echo=FALSE}
+```{r table_active_contour_workflow, echo=FALSE}
 tabl <- c(
   "![Preparation](../images/shapaar_extraction/image_stopping_fun-1.png){ height=10% }", "Image preparation","bw, blur",
   "![Preparation](../images/shapaar_extraction/active_contor_result_compare-1.png){ height=10% }", "Image segmentation", "active_contour",
@@ -116,15 +165,29 @@ tabl <- matrix(tabl,ncol=3, byrow = T)
 knitr::kable(tabl)
 ```
 
-# Shape Analysis
+# Shape Analysis 1: PCA & hclust
 
-## PCA & hclust
+## approach/workflow {.build}
 
-## t-sne & hdbscan
+* using profile distances + additional nominal variables as input
+* conduct PCA
+* using hclust (euclidean/Ward) to cluster
+* package `FactoMinR`: HCPC with automatical cut (number of clusters according to higher relative loss of inertia)
+* for individual clusters, repeat with cluster members as new dataset (usually 3 levels)
 
-### t-sne
+![](../images/hcpc_scatterplot.png){ height=25% } ![](../images/hcpc_3d_scatterplot.png){ height=25% } ![](../images/hcpc_tree.png){ height=25% }
 
-#### t-Distributed Stochastic Neighbor Embedding
+## problems
+
+* non-metric (non-euclidean) variables not considered correctly
+* all vessels had to belong to one cluster (hand made ceramics)
+* global dissimilarity resulted in suboptimal separation
+
+# Shape Analysis 2: t-sne & hdbscan
+
+## t-sne
+
+### t-Distributed Stochastic Neighbor Embedding
 
 \begincols
 \begincol{.48\textwidth}
@@ -143,10 +206,10 @@ Challenge
 \endcol
 \endcols
 
-### hdbscan
+## hdbscan
 
 
-*Hierarchical Density-Based Spatial Clustering of Applications with Noise*  
+### Hierarchical Density-Based Spatial Clustering of Applications with Noise
 
 
 
@@ -168,13 +231,26 @@ Benefits:
 
 ![](../images/hdbscan_density.png){ height=25% } ![](../images/hdbscan_border.png){ height=25% } ![](../images/hdbscan_clusters.png){ height=25% }
 
+## approach/workflow
+
+* using profile distances + additional nominal variables as input
+* conduct t-sne
+* using hdbscan to cluster
+* package `Rtsne`: conduct t-sne 
+  * `Rtsne(as.matrix(shapes),perplexity=30,dims=2,theta = 0)`
+* package `dbscan`: conduct hdbscan on t-sne result
+  * `hdbscan(this_res_sne, minPts = 5)`
+* for individual clusters, repeat with cluster members as new dataset (usually only 2 levels)
+
+![](../images/tsne_hdbscan_level0.png){ height=25% } ![](../images/tsne_hdbscan_level1.png){ height=25% }
+
 # Case studies
 
 ## Bell Beakers of the Iberian Peninsula
 
 ## Neolithic Swiss Ceramic
 
-### Thank you
+## Thank you
 ![Martin](../images/martin.png){ width=33px }
 **Martin Hinz**              
 martin.hinz@ufg.uni-kiel.de
