@@ -35,4 +35,4 @@ vignettes/*.pdf
 
 # Rendered docs
 *.html
-*.pdf
+# *.pdf
