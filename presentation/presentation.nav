@@ -5,41 +5,75 @@
 \headcommand {\sectionentry {1}{Motivation}{2}{Motivation}{0}}
 \headcommand {\slideentry {1}{0}{1}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\slideentry {1}{0}{2}{3/3}{}{0}}
+\headcommand {\beamer@subsectionpages {2}{2}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Vessel shape and typology}}
+\headcommand {\slideentry {1}{1}{1}{3/3}{Vessel shape and typology}{0}}
 \headcommand {\beamer@framepages {3}{3}}
-\headcommand {\slideentry {1}{0}{3}{4/4}{}{0}}
+\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{4}{Available Approaches}}
+\headcommand {\slideentry {1}{2}{1}{4/4}{Available Approaches}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\beamer@sectionpages {2}{4}}
-\headcommand {\beamer@subsectionpages {2}{4}}
-\headcommand {\sectionentry {2}{Shape Extraction}{5}{Shape Extraction}{0}}
-\headcommand {\slideentry {2}{0}{1}{5/5}{}{0}}
+\headcommand {\slideentry {1}{2}{2}{5/5}{Available Approaches}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\slideentry {2}{0}{2}{6/6}{}{0}}
+\headcommand {\slideentry {1}{2}{3}{6/6}{Available Approaches}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {2}{0}{3}{7/7}{}{0}}
+\headcommand {\beamer@sectionpages {2}{6}}
+\headcommand {\beamer@subsectionpages {4}{6}}
+\headcommand {\sectionentry {2}{Shape Extraction}{7}{Shape Extraction}{0}}
+\headcommand {\slideentry {2}{0}{1}{7/7}{}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@sectionpages {5}{7}}
-\headcommand {\beamer@subsectionpages {5}{7}}
-\headcommand {\sectionentry {3}{Shape Analysis}{8}{Shape Analysis}{0}}
-\headcommand {\slideentry {3}{0}{1}{8/8}{}{0}}
+\headcommand {\beamer@subsectionpages {7}{7}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{8}{\IeC {\textquoteleft }by hand\IeC {\textquoteright }}}
+\headcommand {\slideentry {2}{1}{1}{8/8}{\IeC {\textquoteleft }by hand\IeC {\textquoteright }}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\slideentry {3}{0}{2}{9/9}{}{0}}
+\headcommand {\slideentry {2}{1}{2}{9/9}{\IeC {\textquoteleft }by hand\IeC {\textquoteright }}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {3}{0}{3}{10/10}{}{0}}
+\headcommand {\beamer@subsectionpages {8}{9}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{10}{Adaptive Contour}}
+\headcommand {\slideentry {2}{2}{1}{10/10}{Adaptive Contour}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\beamer@sectionpages {8}{10}}
-\headcommand {\beamer@subsectionpages {8}{10}}
-\headcommand {\sectionentry {4}{Case studies}{11}{Case studies}{0}}
-\headcommand {\slideentry {4}{0}{1}{11/11}{}{0}}
+\headcommand {\slideentry {2}{2}{2}{11/11}{Adaptive Contour}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {4}{0}{2}{12/12}{}{0}}
+\headcommand {\slideentry {2}{2}{3}{12/12}{Adaptive Contour}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {4}{0}{3}{13/13}{}{0}}
+\headcommand {\slideentry {2}{2}{4}{13/13}{Adaptive Contour}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {4}{0}{4}{14/14}{}{0}}
+\headcommand {\beamer@sectionpages {7}{13}}
+\headcommand {\beamer@subsectionpages {10}{13}}
+\headcommand {\sectionentry {3}{Shape Analysis}{14}{Shape Analysis}{0}}
+\headcommand {\slideentry {3}{0}{1}{14/14}{}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\beamer@partpages {1}{14}}
-\headcommand {\beamer@subsectionpages {11}{14}}
-\headcommand {\beamer@sectionpages {11}{14}}
-\headcommand {\beamer@documentpages {14}}
-\headcommand {\gdef \inserttotalframenumber {10}}
+\headcommand {\beamer@subsectionpages {14}{14}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{15}{PCA \& hclust}}
+\headcommand {\slideentry {3}{1}{1}{15/15}{PCA \& hclust}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@subsectionpages {15}{15}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{16}{t-sne \& hdbscan}}
+\headcommand {\slideentry {3}{2}{1}{16/16}{t-sne \& hdbscan}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {3}{2}{2}{17/17}{t-sne \& hdbscan}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {3}{2}{3}{18/18}{t-sne \& hdbscan}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\beamer@sectionpages {14}{18}}
+\headcommand {\beamer@subsectionpages {16}{18}}
+\headcommand {\sectionentry {4}{Case studies}{19}{Case studies}{0}}
+\headcommand {\slideentry {4}{0}{1}{19/19}{}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@subsectionpages {19}{19}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{20}{Bell Beakers of the Iberian Peninsula}}
+\headcommand {\slideentry {4}{1}{1}{20/20}{Bell Beakers of the Iberian Peninsula}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@subsectionpages {20}{20}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{21}{Neolithic Swiss Ceramic}}
+\headcommand {\slideentry {4}{2}{1}{21/21}{Neolithic Swiss Ceramic}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{22}{Thank you}}
+\headcommand {\slideentry {4}{3}{1}{22/22}{Thank you}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@partpages {1}{22}}
+\headcommand {\beamer@subsectionpages {22}{22}}
+\headcommand {\beamer@sectionpages {19}{22}}
+\headcommand {\beamer@documentpages {22}}
+\headcommand {\def \inserttotalframenumber {18}}

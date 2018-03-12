@@ -1,0 +1,21 @@
+\frametitle{\protect \hypertarget {active-contour-with-beakers}{Active contour with Beakers}}
+
+See
+\href{https://github.com/ISAAKiel/shapAAR/blob/master/vignettes/object-extraction.md}{shapAAR
+vignette}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\endhead
+\includegraphics[width=\textwidth,height=0.1\textwidth]{../images/shapaar_extraction/image_stopping_fun-1.png}
+& Image preparation\tabularnewline
+\includegraphics[width=\textwidth,height=0.1\textwidth]{../images/shapaar_extraction/active_contor_result_compare-1.png}
+& Image segmentation\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{verbatim}
+"![](red.png)","![](green.png)"
+"![](blue.png)","![](black.png)"
+\end{verbatim}
+

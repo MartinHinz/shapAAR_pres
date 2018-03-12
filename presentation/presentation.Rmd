@@ -8,10 +8,19 @@ fontsize: 9pt
 output:
   beamer_presentation:
     theme: "metropolis"
-fig_caption: yes
+    slide_level: 3
+    fig_caption: yes
 header-includes:
   - \titlegraphic{\begin{flushright}\includegraphics[width=.3\textwidth]{../images/logos/isaak_with_text.png}\end{flushright}\hfill}
   - \metroset{sectionpage=progressbar}
+  - \def\begincols{\begin{columns}}
+  - \def\begincol{\begin{column}}
+  - \def\endcol{\end{column}}
+  - \def\endcols{\end{columns}}
+  - \usepackage{animate}
+  - \usepackage{caption}
+  - \captionsetup{font=scriptsize,labelfont=scriptsize}
+
 ---
 
 ```{r, echo = FALSE}
@@ -28,18 +37,136 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 ## Vessel shape and typology
 
 ## Available Approaches
+Without claim to completeness:
+
+### Using specific locations
+
+* Koch 1998
+
+### 'Hollistic' approaches
+
+* Mom 2005
+* Chapman et al., 2006
+* Keogh et al., 2009
 
 # Shape Extraction
 
 ## 'by hand'
 
+### Workflow
+![](../images/shape_simplification_before.png){ height=30% }
+
+&downarrow;
+
+![](../images/shape_simplification_after.png){ height=30% }
+
 ## Adaptive Contour
+### Problem
+
+\begincols
+\begincol{.48\textwidth}
+
+* Scanned vessel drawings might have holes (dashed lines)
+* No simple image segmentation with background color and floodfill possible
+
+\endcol
+\begincol{.48\textwidth}
+```{r echo=FALSE, out.width='100%', fig.cap='Bell Beaker (Harrison 1977)'}
+knitr::include_graphics('../images/harrison_1977_1727.png')
+```
+\endcol
+\endcols
+
+
+### Solution: Active contour
+
+\begincols
+\begincol{.48\textwidth}
+
+> **Active contour model**, also called **snakes**, is a framework in computer vision for delineating an object outline from a possibly noisy 2D image.
+> The snakes model is popular in computer vision, and snakes are greatly used in applications like object tracking, **shape recognition**, segmentation, edge detection and stereo matching.
+> [Wikipedia](https://en.wikipedia.org/wiki/Active_contour_model)
+
+\endcol
+\begincol{.48\textwidth}
+
+\animategraphics[loop,autoplay,width=\linewidth]{50}{../images/animation/morph_snake-}{0}{129}
+
+\scriptsize{source: https://github.com/pmneila/morphsnakes}
+
+\endcol
+\endcols
+
+### Active contour with Beakers
+
+See shapAAR vignette
+
+\scriptsize{https://github.com/ISAAKiel/shapAAR/blob/master/vignettes/object-extraction.md}
+
+```{r table2, echo=FALSE}
+tabl <- c(
+  "![Preparation](../images/shapaar_extraction/image_stopping_fun-1.png){ height=10% }", "Image preparation","bw, blur",
+  "![Preparation](../images/shapaar_extraction/active_contor_result_compare-1.png){ height=10% }", "Image segmentation", "active_contour",
+  "![Preparation](../images/shapaar_extraction/active_contor_object_selection-1.png){ height=10% }", "Selecting the biggest object","EBImage",
+  "![Preparation](../images/shapaar_extraction/active_contor_object_rim_crop-2.png){ height=10% }", "Rectify and crop","get Bounding box, rotate upright, crop",
+  "![Preparation](../images/shapaar_extraction/profile_contour_mean-2.png){ height=10% }", "half and side mean", "split in middle, mean left-right"
+)
+
+tabl <- matrix(tabl,ncol=3, byrow = T)
+knitr::kable(tabl)
+```
 
 # Shape Analysis
 
 ## PCA & hclust
 
 ## t-sne & hdbscan
+
+### t-sne
+
+#### t-Distributed Stochastic Neighbor Embedding
+
+\begincols
+\begincol{.48\textwidth}
+```{r echo=FALSE, out.width='100%', fig.cap='van der Maaten 2008; 2009; 2012; 2014; https://lvdmaaten.github.io/tsne/ https://www.youtube.com/watch?v=RJVL80Gg3lA'}
+knitr::include_graphics('../images/tsne_swiss_roll.png')
+```
+
+\endcol
+\begincol{.48\textwidth}
+
+Challenge
+
+* high dimensional non-linear data distribution
+* consider not the global, but the local neighbourhood (contrasting PCA)
+
+\endcol
+\endcols
+
+### hdbscan
+
+
+*Hierarchical Density-Based Spatial Clustering of Applications with Noise*  
+
+
+
+\begincols
+\begincol{.48\textwidth}
+
+![](../images/hdbscan_tree.png)
+
+\endcol
+\begincol{.48\textwidth}
+
+Benefits:
+
+* separating non-circular clusters
+* 'identification' and exclusion of noise (hand made ceramics!)
+
+\endcol
+\endcols
+
+![](../images/hdbscan_density.png){ height=25% } ![](../images/hdbscan_border.png){ height=25% } ![](../images/hdbscan_clusters.png){ height=25% }
 
 # Case studies
 
