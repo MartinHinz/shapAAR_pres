@@ -101,9 +101,27 @@ Without claim to completeness:
 
 # Shape Extraction
 
-## 'by hand'
+## 'by hand': workflow
 
-### Workflow
+```{r table_active_contour_workflow2, echo=FALSE}
+tabl <- c(
+  "![Preparation](../images/hand_extraction/1.png){ height=10% }", "load",
+  "![Preparation](../images/hand_extraction/2.png){ height=10% }", "clean",
+  "![Preparation](../images/hand_extraction/3.png){ height=10% }", "enhance contrast",
+  "![Preparation](../images/hand_extraction/4.png){ height=10% }", "close gaps",
+  "![Preparation](../images/hand_extraction/5.png){ height=10% }", "fill inside black",
+  "![Preparation](../images/hand_extraction/6.png){ height=10% }", "turn bw (bitmap)",
+  "![Preparation](../images/hand_extraction/7.png){ height=10% }", "rotate",
+  "![Preparation](../images/hand_extraction/8.png){ height=10% }", "crop",
+  "![Preparation](../images/hand_extraction/9.png){ height=10% }", "split in half",
+  "![Preparation](../images/hand_extraction/10.png){ height=10% }", "scale to resolution (100px)"
+)
+
+tabl <- matrix(tabl,ncol=4, byrow = T)
+knitr::kable(tabl)
+```
+
+## 'by hand': speed
 ![](../images/shape_simplification_before.png){ height=30% }
 
 &downarrow;
@@ -115,8 +133,12 @@ Without claim to completeness:
 \begincols
 \begincol{.48\textwidth}
 
-* Scanned vessel drawings might have holes (dashed lines)
-* No simple image segmentation with background color and floodfill possible
+* 1:30 min for 800 images -> 20 hours
+  * automation makes sense!
+* scanned vessel drawings not trivial
+  * might have holes (dashed lines)
+  * might have additional image components beside the vessels
+* no simple image segmentation with background color and floodfill possible
 
 \endcol
 \begincol{.48\textwidth}
