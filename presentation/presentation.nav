@@ -76,10 +76,15 @@
 \headcommand {\beamer@framepages {29}{29}}
 \headcommand {\slideentry {6}{0}{7}{30/30}{}{0}}
 \headcommand {\beamer@framepages {30}{30}}
-\headcommand {\slideentry {6}{0}{8}{31/31}{}{0}}
+\headcommand {\beamer@sectionpages {24}{30}}
+\headcommand {\beamer@subsectionpages {24}{30}}
+\headcommand {\sectionentry {7}{Case study 2: Neolithic Swiss Ceramic}{31}{Case study 2: Neolithic Swiss Ceramic}{0}}
+\headcommand {\slideentry {7}{0}{1}{31/31}{}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\beamer@partpages {1}{31}}
-\headcommand {\beamer@subsectionpages {24}{31}}
-\headcommand {\beamer@sectionpages {24}{31}}
-\headcommand {\beamer@documentpages {31}}
+\headcommand {\slideentry {7}{0}{2}{32/32}{}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\beamer@partpages {1}{32}}
+\headcommand {\beamer@subsectionpages {31}{32}}
+\headcommand {\beamer@sectionpages {31}{32}}
+\headcommand {\beamer@documentpages {32}}
 \headcommand {\def \inserttotalframenumber {25}}

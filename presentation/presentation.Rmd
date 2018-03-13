@@ -392,8 +392,11 @@ knitr::kable(tabl)
 ## Resume Case Study 1
 
 with t-sne and hdbscan
+
 * finer separation of classes early
 * profile curvature has more impact
+
+but in general at this complexity level both approaches are feasible/comparable
 
 # Case study 2: Neolithic Swiss Ceramic
 
