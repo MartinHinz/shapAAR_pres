@@ -299,6 +299,7 @@ Benefits:
   * Prieto-martinez/Salanova 2011
 * Only ceramics with full (preserved or reconstructed) profiles
 * Only beakers and carinated bowls
+  * rather low diversity of ceramic shapes
 
 \endcol
 \begincol{.48\textwidth}
@@ -400,6 +401,160 @@ with t-sne and hdbscan
 but in general at this complexity level both approaches are feasible/comparable
 
 # Case study 2: Neolithic Swiss Ceramic
+
+## Background
+
+![](../images/met_logo.jpg){ }
+
+\begincols
+\begincol{.48\textwidth}
+
+**M**obilities, **E**ntanglements, **T**ransformations  
+
+What can be said about mobility, relationships and transformations in neolithic societies on the basis of ceramics?
+
+* including form, but also nominal characteristics like
+  * lugs, handles, eyelet
+  * bottom characteristics
+  * plastic attachments
+  * surface treatment
+* much more diverse ceramic shapes
+
+\endcol
+\begincol{.48\textwidth}
+
+![Ceramic spectrum at different Swiss and South German sites, 3950–3900 cal BCE](../images/met_map.png){}
+
+\endcol
+\endcols
+
+## Results HCPC
+
+\begincols
+\begincol{.48\textwidth}
+
+* Separation first Level
+  * bowls
+  * higher forms
+  * special forms
+* second level higher forms
+  * beakers
+  * higher and flatter bowls
+* not bad
+
+\endcol
+\begincol{.48\textwidth}
+
+![](../images/case_met/graph_met_hcpc.png)
+
+\endcol
+\endcols
+
+## mean profile per cluster HCPC
+
+```{r mean_profile_per_cluster_HCPC_met, echo=FALSE}
+tabl <- c(
+  "Cluster 1", "![](../images/case_met/mean_plot_hcpc_met_1.png){width=25%}", 
+  "Cluster 2", "![](../images/case_met/mean_plot_hcpc_met_2.png){width=25%}",
+  "Cluster 3", "![](../images/case_met/mean_plot_hcpc_met_3.png){width=25%}"
+)
+
+tabl <- matrix(tabl,ncol=3, byrow = F)
+knitr::kable(tabl)
+```
+ 
+```{r mean_profile_per_cluster_HCPC_level_met, echo=FALSE}
+tabl <- c(
+  "![](../images/case_met/mean_plot_hcpc_met_1.1.png){width=25%}", "Cluster 1.1", 
+  "![](../images/case_met/mean_plot_hcpc_met_1.2.png){width=25%}", "Cluster 1.2", 
+  "![](../images/case_met/mean_plot_hcpc_met_1.3.png){width=25%}", "Cluster 1.3" 
+)
+
+tabl <- matrix(tabl,ncol=3, byrow = F)
+knitr::kable(tabl)
+```
+
+## Results tsne_hdbscan
+
+\begincols
+\begincol{.48\textwidth}
+
+* First Level separation dishes / remainder
+* on second level an explosion of 33 different classes
+
+\endcol
+\begincol{.48\textwidth}
+
+![](../images/case_met/graph_met_tsne.png)
+
+\endcol
+\endcols
+
+## mean profile per cluster tsne_hdbscan
+
+```{r mean_profile_per_cluster_tsne_met, echo=FALSE}
+tabl <- c(
+  "Cluster 1", "![](../images/case_met/mean_plot_tsne_met_1.png){width=25%}", 
+  "Cluster 2", "![](../images/case_met/mean_plot_tsne_met_2.png){width=25%}"
+)
+
+tabl <- matrix(tabl,ncol=2, byrow = F)
+knitr::kable(tabl)
+```
+ 
+```{r mean_profile_per_cluster_tsne_level_met, echo=FALSE}
+tabl <- c(
+  "![](../images/case_met/mean_plot_tsne_met_1.1.png){width=12%}", "\\scriptsize{{Cluster 1.1}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.2.png){width=12%}", "\\scriptsize{{Cluster 1.2}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.3.png){width=12%}", "\\scriptsize{{Cluster 1.3}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.4.png){width=12%}", "\\scriptsize{{Cluster 1.4}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.5.png){width=12%}", "\\scriptsize{{Cluster 1.5}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.6.png){width=12%}", "\\scriptsize{{Cluster 1.6}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.7.png){width=12%}", "\\scriptsize{{Cluster 1.7}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.8.png){width=12%}", "\\scriptsize{{Cluster 1.8}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.9.png){width=12%}", "\\scriptsize{{Cluster 1.9}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.10.png){width=12%}", "\\scriptsize{{Cluster 1.10}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.11.png){width=12%}", "\\scriptsize{{Cluster 1.11}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.12.png){width=12%}", "\\scriptsize{{Cluster 1.12}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.13.png){width=12%}", "\\scriptsize{{Cluster 1.13}}",
+  "![](../images/case_met/mean_plot_tsne_met_1.14.png){width=12%}", "\\scriptsize{{Cluster 1.14}}"
+)
+
+tabl <- matrix(tabl,ncol=7, byrow = F)
+knitr::kable(tabl)
+```
+
+## Resume Case Study 2
+
+with t-sne and hdbscan
+
+* much finer separation of classes
+* much greater homogeneity within the classes
+* Classification clearly more meaningful based on prior archaeological knowledge
+  * no mixing up of 'exotic shapes' into one class
+  * eg. Michelsberg Beakers separated
+    * even division between 'Beutelbecher' ('bag beaker') and 'Tulpenbecher' ('tulip beaker')
+
+# Resume
+
+## Results from case studies
+
+* unsupervised classification (also as merely explorative tool) can open up new perspectives in archaeological interpretation
+* automated object separation has the potential to speed up the process significantly
+* in case of low diversity pca/hclust and t-sne/hdbscan perform similar
+* in case of high diversity t-sne/hdbscan results in much more adequate classes
+
+## shapAAR as (CRAN) Package
+
+Watch this space:
+[https://github.com/ISAAKiel/shapAAR](https://github.com/ISAAKiel/shapAAR)
+
+![](../images/screen_github_shapAAR.png){ height=40% }
+
+* object separation from scanned images already usable
+* inclusion of classification in progress
+* cran release expected this year (2018)
+
 
 ## Thank you
 ![Martin](../images/martin.png){ width=33px }
