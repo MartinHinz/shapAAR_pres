@@ -38,6 +38,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 ## shape vs. decoration for typology
 
 ## levels of pottery design
+Tendencies:
 
 ```{r table_shape_vs_decoration, echo=FALSE}
 tabl <- c(
@@ -45,10 +46,10 @@ tabl <- c(
   "dependency on local ressources", "stronger","weak",
   "moment of determination", "from the beginning","finished product",
   "ad hoc changes", "difficult","easy",
-  "more reflecting", "habitus", "personal signature",
+  "more reflecting", "practised reality", "imagined reality",
   "design decision", "more collective", "more individual",
   "homogenity", "more convergent", "more divergent",
-  "degrees of freedom", "lesser", "more",
+  "degrees of freedom", "smaller", "higher",
   "category of style", "more isochrestic", "more emblemic",
   "unit of analysis", "ideal type", "singularity"
 )
@@ -62,15 +63,15 @@ knitr::kable(tabl)
 
 ### Design
 * imagined and intended
-* concept of a shape
+* concept of a shape (incl. attached parts, eg. handles)
 * ideal type
 * **social bounded options for creativity**
 
 ### 'style of action'
 * learned, habitual movements, manipulations, routines
 * at all stages of the *chaîne opératoire*
-* instantiation
-* **limited options for creativity**
+* instantiation reflecting the characteristics of the material
+* **limited or prescribed options for creativity**
 
 ### 'material style'
 * physical traces and effects in the material
@@ -80,7 +81,7 @@ knitr::kable(tabl)
 
 ## resume
 
-### using vessel shapes to identify underlying large scaled 'communities of practice'
+### using vessel shapes to identify underlying large scaled 'communities of practice' in production and consumption
 * more related to covert communication structures, habitus and similar (economic) practises
 * 'better measurable' from a practical quantitative perspective
 
