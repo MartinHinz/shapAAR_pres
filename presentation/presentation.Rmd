@@ -20,7 +20,7 @@ header-includes:
   - \def\endcols{\end{columns}}
   - \usepackage{animate}
   - \usepackage{caption}
-  - \captionsetup{font=scriptsize,labelfont=scriptsize}
+  - \captionsetup{font=scriptsize,labelfont=scriptsize,labelformat=empty}
 
 ---
 
