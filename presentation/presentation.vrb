@@ -29,6 +29,6 @@
   (usually only 2 levels)
 \end{itemize}
 
-\includegraphics[width=\textwidth,height=0.25\textwidth]{../images/tsne_hdbscan_level0.png}
-\includegraphics[width=\textwidth,height=0.25\textwidth]{../images/tsne_hdbscan_level1.png}
+\includegraphics[width=\textwidth,height=0.25\textheight]{../images/tsne_hdbscan_level0.png}
+\includegraphics[width=\textwidth,height=0.25\textheight]{../images/tsne_hdbscan_level1.png}
 

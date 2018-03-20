@@ -37,6 +37,10 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 ## shape vs. decoration for typology
 
+### using vessel shapes to identify underlying large scaled 'communities of practice' in production and consumption
+* more related to covert communication structures, habitus and similar (economic) practises
+* 'better measurable' from a practical quantitative perspective
+
 ## levels of pottery design
 Tendencies:
 
@@ -78,12 +82,6 @@ knitr::kable(tabl)
 * Characteristics of the vessel
 * finished object
 * **material induced alterations of the original design possible**
-
-## resume
-
-### using vessel shapes to identify underlying large scaled 'communities of practice' in production and consumption
-* more related to covert communication structures, habitus and similar (economic) practises
-* 'better measurable' from a practical quantitative perspective
 
 # previous approaches
 Without claim to completeness:
